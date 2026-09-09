@@ -47,19 +47,32 @@ def count_matches(product_tags, customer_tags):
 
 
 # TODO: Step 6 - Write a function that loops over all products and returns a sorted list of matches
-def recommend_products(products, customer_tags):
+def recommend_products(products, customer_preferences):
     '''
     Args:
         products (list): A list of product dictionaries.
-        customer_tags (set): A set of tags associated with the customer.
+        customer_preferences (set): A set of tags associated with the customer.
     Returns:
         list: A list of products containing product names and their match counts.
     '''
-    pass
+    recommendations = []
+    for product in products:
+        match_count = count_matches(product["tags"], customer_preferences)
+        if match_count > 0:
+            recommendations.append({
+                "name": product["name"],
+                "matches": match_count
+            })
+
+    return sorted(recommendations, key=lambda product: product["matches"], reverse=True)
 
 
 
 # TODO: Step 7 - Call your function and print the results
+recommendations = recommend_products(converted_products, customer_preferences)
+print("Recommended Products:")
+for recommendation in recommendations:
+    print(f"- {recommendation['name']} ({recommendation['matches']} match(es))")
 
 
 
