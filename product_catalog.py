@@ -79,4 +79,8 @@ for recommendation in recommendations:
 
 # DESIGN MEMO (write below in a comment):
 # 1. What core operations did you use (e.g., intersections, loops)? Why?
+# I used loops to collect preferences and process every product. I used set
+# intersections to find matching tags quickly, and sets also remove duplicate preferences.
 # 2. How might this code change if you had 1000+ products?
+# I could index products by tag or use a database/search system so only relevant
+# products are checked, instead of scanning the entire list each time.
