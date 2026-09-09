@@ -79,8 +79,25 @@ for recommendation in recommendations:
 
 # DESIGN MEMO (write below in a comment):
 # 1. What core operations did you use (e.g., intersections, loops)? Why?
-# I used loops to collect preferences and process every product. I used set
-# intersections to find matching tags quickly, and sets also remove duplicate preferences.
+# This program uses loops, list operations, set conversion, set intersections, and
+# sorting. The while loop collects preferences until the customer enters N. A list
+# works well during input because values can be appended and their entry order is
+# preserved. The list is then converted to a set, which removes duplicate preferences
+# and makes comparisons efficient. A second loop processes every product and builds a
+# new list of dictionaries. It keeps each product name while converting its tag list
+# into a set.
+#
+# The count_matches function uses set intersection to find tags shared by a product
+# and the customer. The length of that intersection becomes the match score. This is
+# simpler and more efficient than manually comparing every tag combination. The
+# recommendation function calculates a score for each product, removes products with
+# zero matches, and sorts the remaining products from the highest score to the lowest.
 # 2. How might this code change if you had 1000+ products?
-# I could index products by tag or use a database/search system so only relevant
-# products are checked, instead of scanning the entire list each time.
+# With 1,000 or more products, scanning the entire catalog for every customer could
+# become slower. I could build an index mapping each tag to the products that contain
+# it. The program could then retrieve only products related to the customer's tags
+# instead of checking every product. A database or search system with indexed tag
+# fields could also handle filtering and sorting efficiently. The index would need to
+# be updated when products or tags changed. For this small assignment, the current
+# list and set approach is simpler and adequate, but indexing would help as the
+# catalog and number of searches grow.
