@@ -1,13 +1,5 @@
-from customer_preferences import products
+from product_data import products
 # TODO: Step 1 - Print out the products to see the data that you are working with.
-products = [ 
-    {"name": "Eco Water Bottle", "tags": ["eco-friendly", "durable", "recyclable"]}, 
-    {"name": "Trail Backpack", "tags": ["durable", "water-resistant", "lightweight"]}, 
-    {"name": "Vegan Leather Wallet", "tags": ["vegan", "stylish", "compact"]}, 
-    {"name": "Bamboo Toothbrush", "tags": ["eco-friendly", "vegan", "biodegradable"]}, 
-    {"name": "Smartwatch", "tags": ["tech", "durable", "stylish"]},
-    ...
-]
 
 # TODO: Step 2 - Create a list called customer_preferences and store the user preference in this list.
 customer_preferences = []
