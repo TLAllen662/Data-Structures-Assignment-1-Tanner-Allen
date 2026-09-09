@@ -41,7 +41,7 @@ def count_matches(product_tags, customer_tags):
     Returns:
         int: The number of matching tags between the product and customer.
     '''
-    pass
+    return len(product_tags.intersection(customer_tags))
 
 
 
