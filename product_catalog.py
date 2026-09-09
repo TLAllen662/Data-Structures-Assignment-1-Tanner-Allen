@@ -1,9 +1,10 @@
-from product_data import products
+from customer_preferences import products
 # TODO: Step 1 - Print out the products to see the data that you are working with.
 
 
 
 # TODO: Step 2 - Create a list called customer_preferences and store the user preference in this list.
+customer_preferences = []
 
 
 response = ""
@@ -11,9 +12,11 @@ while response != "N":
     print("Input a preference:")
     preference = input()
     # Add the customer preference to the list
+    customer_preferences.append(preference)
 
     response = input("Do you want to add another preference? (Y/N): ").upper()
-  
+
+print(customer_preferences)
 
 # TODO: Step 3 - Convert customer_preferences list to set to eliminate duplicates.
 
