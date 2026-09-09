@@ -1,5 +1,6 @@
 from customer_preferences import products
 # TODO: Step 1 - Print out the products to see the data that you are working with.
+print(products[:5])
 
 
 
