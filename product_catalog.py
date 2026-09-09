@@ -1,8 +1,13 @@
 from customer_preferences import products
 # TODO: Step 1 - Print out the products to see the data that you are working with.
-print(products[:5])
-
-
+products = [ 
+    {"name": "Eco Water Bottle", "tags": ["eco-friendly", "durable", "recyclable"]}, 
+    {"name": "Trail Backpack", "tags": ["durable", "water-resistant", "lightweight"]}, 
+    {"name": "Vegan Leather Wallet", "tags": ["vegan", "stylish", "compact"]}, 
+    {"name": "Bamboo Toothbrush", "tags": ["eco-friendly", "vegan", "biodegradable"]}, 
+    {"name": "Smartwatch", "tags": ["tech", "durable", "stylish"]},
+    ...
+]
 
 # TODO: Step 2 - Create a list called customer_preferences and store the user preference in this list.
 customer_preferences = []
@@ -20,11 +25,17 @@ while response != "N":
 print(customer_preferences)
 
 # TODO: Step 3 - Convert customer_preferences list to set to eliminate duplicates.
+customer_preferences = set(customer_preferences)
 
 
 
 # TODO: Step 4 - Convert the product tags to sets in order to allow for faster comparisons.
 converted_products = []
+for product in products:
+    converted_products.append({
+        "name": product["name"],
+        "tags": set(product["tags"])
+    })
 
 
 
